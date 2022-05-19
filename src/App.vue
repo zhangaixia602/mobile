@@ -1,26 +1,17 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <HeaderPage msg="Welcome to Your Vue.js App"/>
+	<PartnersPage/>
+	<FooterPage />
 </template>
-
 <script>
-import HeaderPage from './components/HeaderPage.vue'
 
-export default {
-  name: 'App',
-  components: {
-    'HeaderPage':HeaderPage
-  }
-}
+	import FooterPage from '@/components/FooterPage';
+	import PartnersPage from '@/components/PartnersPage';
+	export default {
+		name: 'App',
+		components: {
+			FooterPage,
+			PartnersPage
+		}
+	}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin:0 auto;
-}
-</style>
+ 
