@@ -71,14 +71,14 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		padding: 3rem 0;
+		padding: 1.5rem 0;
 	}
 
 	.partnerBox span {
 		display: inline-block;
-		width: 6.4rem;
-		height: 3.5rem;
-		padding: 0.3rem;
+		width: 3.2rem;
+		height: 1.8rem;
+		padding: 0.2rem;
 	}
 
 	.partnerBox span img {

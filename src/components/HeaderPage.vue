@@ -30,22 +30,22 @@ export default {
       ],
 	  menus: [
         {
-          src: "assets/yq.png",
+          src: "assets/yq1.png",
           title: "智慧能源",      
           text: "运用大数据、物联网、信息管理等技术，打造智慧互联的园区.",
         },
         {
-          src: "assets/yq.png",
+          src: "assets/yq1.png",
           title:"智慧工厂",
           text: "实现在同一平台管理及掌握工厂全面状况，形象的在现厂区内的多样化资产",
         },
         {
-          src: "assets/yq.png",
+          src: "assets/yq1.png",
           title:"智慧水利",
           text: "利用了IPV6、云计算、大数据等互联网数据，",
         },
           {
-          src: "assets/yq.png",
+          src: "assets/yq1.png",
           title:"智慧粮仓",
           text: "系统利用三维视图结合虚拟现实技术，将包括站坪、建筑物、粮仓。",
         }
