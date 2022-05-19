@@ -45,7 +45,7 @@ h3.titbg {
   margin: 0;
   font-size: 1.3rem;
   text-align: center;
-  color:#ffb203;
+  color:#006ebf;
   font-weight: bold;
 }
 h3.titbg span {
