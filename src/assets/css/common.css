@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+html,body{
+    margin:0;
+    padding:0;
+    height: 100%;
+    font-size: 20px;
+    color:white;
+}
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+}
+.img{
+    vertical-align: middle;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1,h3,h4,h5,p{
+    margin:0;
+    padding:0;
+}
+
+.wrapper{
+    margin: 0 auto;
+}
+.ovh {
+    overflow: hidden;
+}
+.ltr{
+    float:left;
+}
+.rtl{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.textCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textItalic{
+    font-style: italic;
+}
+.text-indent{
+    text-indent:2em;
+}
