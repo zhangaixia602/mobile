@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<h3 class="titbg">合作伙伴<span>partners</span></h3>
+		<h3 class="titbg">合作伙伴<span> / partners</span></h3>
 		<div class="partnerBox">
 			<span v-for="(partner, index) in partners" :key="index">
 				<img :src="require('../assets/partner/'+partner)" />
@@ -9,7 +9,9 @@
 	</section>
 </template>
 <script>
-	import { defineComponent } from "vue";
+	import {
+		defineComponent
+	} from "vue";
 	export default defineComponent({
 		name: 'PartnersPage',
 		data() {
@@ -60,4 +62,28 @@
 	})
 </script>
 <style scoped>
+	section{
+		width:100%;
+		overflow: hidden;
+	}
+	.partnerBox {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		padding: 3rem 0;
+	}
+
+	.partnerBox span {
+		display: inline-block;
+		width: 6.4rem;
+		height: 3.5rem;
+		padding: 0.3rem;
+	}
+
+	.partnerBox span img {
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
 </style>

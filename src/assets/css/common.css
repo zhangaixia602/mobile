@@ -1,60 +1,105 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding:0;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
-html,body{
-    margin:0;
-    padding:0;
-    height: 100%;
-    font-size: 20px;
-    color:white;
-}
+
+html,
 body {
-    overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	height: 100%;
+	font-size: 20px;
+	color: white;
+}
+
+body {
+	overflow-x: hidden;
 }
 
 a {
-    text-decoration: none !important;
-}
-.img{
-    vertical-align: middle;
+	text-decoration: none !important;
 }
 
-ul, li {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.img {
+	vertical-align: middle;
 }
 
-h1,h3,h4,h5,p{
-    margin:0;
-    padding:0;
+ul,
+li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 
-.wrapper{
-    margin: 0 auto;
+h1,
+h3,
+h4,
+h5,
+p {
+	margin: 0;
+	padding: 0;
 }
+
+.wrapper {
+	margin: 0 auto;
+}
+
 .ovh {
-    overflow: hidden;
+	overflow: hidden;
 }
-.ltr{
-    float:left;
+
+.ltr {
+	float: left;
 }
-.rtl{
-    float: right;
+
+.rtl {
+	float: right;
 }
-.clear{
-    clear: both;
+
+.clear {
+	clear: both;
 }
-.textCenter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.textCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.textItalic{
-    font-style: italic;
+
+.textItalic {
+	font-style: italic;
 }
-.text-indent{
-    text-indent:2em;
+
+.text-indent {
+	text-indent: 2em;
+}
+
+.titbg {
+	padding-bottom: 1rem;
+	margin: 0;
+	font-size: 1.3rem;
+	text-align: center;
+	color: #006ebf;
+	position: relative;
+}
+
+.titbg span {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	line-height: 2rem;
+	color: #484848;
+}
+
+.titbg::after {
+	content: "";
+	display: inline-block;
+	width: 2rem;
+	height: 0.2rem;
+	background: #006ebf;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
 }
