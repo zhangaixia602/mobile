@@ -109,27 +109,49 @@ p {
 .propup .ant-modal-body {
 	padding: 0 0.2rem !important;
 }
+
 .propup .ant-modal-header {
-    padding: 8px 10px;
+	padding: 8px 10px;
 }
+
 .propup .ant-modal-close-x {
-    height: 39px;
-    line-height: 39px;
+	height: 39px;
+	line-height: 39px;
 }
-.titleBg{
-	    position: relative;
-	    border-bottom: 1px solid #58fdff;
-	    font-size: 0.7rem;
-	    text-align: center;
-		margin-bottom:0;
-	    color: white;
-	}
-	.titleBg::after{
-	    content: "";
-	    position: absolute;
-	    bottom: 0;
-	    right: 0;
-	    width: 41px;
-	    height: 3px;
-	    background: #58fdff;
-	}
+
+.titleBg {
+	position: relative;
+	border-bottom: 1px solid #58fdff;
+	font-size: 0.7rem;
+	text-align: center;
+	margin-bottom: 0;
+	color: white;
+}
+
+.titleBg::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 41px;
+	height: 3px;
+	background: #58fdff;
+}
+
+.ztbg {
+	font-size: 1rem;
+	color: #006ebf;
+	position: relative;
+}
+
+.ztbg::after {
+	content: "";
+	display: inline-block;
+	width: 2rem;
+	height: 0.1rem;
+	background: #006ebf;
+	position: absolute;
+	left: 7%;
+	bottom: 0;
+	transform: translateX(-50%);
+}
