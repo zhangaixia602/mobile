@@ -10,14 +10,19 @@
 		</div>
 		<div class='product'>
 			<div class='wrapper'>
-				<a v-for='(product,index) in products' :key='index' @click="showPage(product)"
-					class='productItem' :class="{isShow: this.currentgroup===product.group || this.currentgroup===''}">
+				<a v-for='(product,index) in products' :key='index' @click="showPage(product)" class='productItem'
+					:class="{isShow: this.currentgroup===product.group || this.currentgroup===''}">
 					<img :src="require('../' + product.src)" />
 					<h3>{{product.title}}</h3>
 				</a>
 			</div>
 		</div>
 	</section>
+	<a-modal wrapClassName='propup' :footer="null" v-model:visible="visible" title="视频展示" @ok="handleOk">
+		<video autoplay="true" loop>
+			<source :src="require('../assets/'+videoSrc)" type="video/mp4" />
+		</video>
+	</a-modal>
 </template>
 <script>
 	import {
@@ -29,6 +34,8 @@
 			return {
 				currentIndex: 0,
 				currentgroup: '',
+				videoSrc:'',
+				visible:false,
 				navs: [{
 						title: '全部',
 						icon: 'icon-zhihuiyuanqu',
@@ -55,21 +62,21 @@
 						title: '智慧工厂',
 						src: 'assets/yq.png',
 						id: '01',
-						path: '/model/insect'
+						video: 'water.mp4'
 					},
 					{
 						group: 'energy',
 						title: '智慧能源',
 						src: 'assets/ny.png',
 						id: '02',
-						path: '/model/granary'
+						video: 'water.mp4'
 					},
 					{
 						group: 'park',
 						title: '智慧粮仓',
 						src: 'assets/lc.png',
 						id: '03',
-						path: '/model/factory'
+						video: 'water.mp4'
 					},
 					{
 						group: 'draulic',
@@ -83,20 +90,28 @@
 						title: '智慧厂区',
 						src: 'assets/cyq.png',
 						id: '05',
-						path: '/model/earth'
+						video: 'water.mp4'
 					}
 
 				]
 			}
 		},
 		methods: {
+			handleOk(){
+				this.visible=false;
+			},
 			showNav(nav, index) {
 				this.currentgroup = nav.group
 				this.currentIndex = index
 			},
-			showPage(product){
-				console.log(product.path);
-				this.$router.push(product.path)
+			showPage(product) {
+				if(product.path){
+					this.$router.push(product.path)
+				}
+				if(product.video){
+					this.videoSrc=product.video;
+					this.visible=true;
+				}
 			}
 		}
 	})
@@ -132,7 +147,7 @@
 	}
 
 	.product {
-		padding:1rem;
+		padding: 1rem;
 		background: white;
 	}
 
@@ -168,5 +183,8 @@
 		color: #0d0e0f;
 		padding: 0.5rem;
 		margin: 0;
+	}
+	video{
+		width:100%;
 	}
 </style>
