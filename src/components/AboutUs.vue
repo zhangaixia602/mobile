@@ -104,7 +104,12 @@
 		font-size: 1.2rem;
 	}
 	.cultureItem h3{
-		color: #f4a940;
-		font-size: 0.9rem;
+		color:  #ffcd02;
+		font-size: 0.8rem;
+		font-weight: bold;
+		padding-top:0.5rem;
+	}
+	.cultureItem p{
+		text-indent: 0;
 	}
 </style>
