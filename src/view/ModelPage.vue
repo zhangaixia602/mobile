@@ -2,11 +2,11 @@
   <component :is="currentComponent"></component>
 </template>
 <script>
-import WaterPage from '@/view/WaterPage'
+import InsertPage from '@/view/InsertPage'
 export default {
   name: 'ModelPage',
   components: {
-    'WaterPage': WaterPage
+    'InsertPage': InsertPage
   },
   data () {
     return {
@@ -14,7 +14,7 @@ export default {
       Allcomps: [
         {
           id: 'water',
-          component: 'WaterPage'
+          component: 'InsertPage'
         }
       ]
     }
