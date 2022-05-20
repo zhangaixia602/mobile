@@ -105,3 +105,20 @@ p {
 	bottom: 0;
 	transform: translateX(-50%);
 }
+.ztbg {	
+	font-size: 1rem;	
+	color: #006ebf;	
+	position: relative;
+}
+.ztbg::after {
+	content: "";
+	display: inline-block;
+	width: 2rem;
+	height: 0.1rem;
+	background: #006ebf;
+	position: absolute;
+	left: 7%;
+	bottom: 0;
+	transform: translateX(-50%);
+}
+

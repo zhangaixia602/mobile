@@ -11,7 +11,7 @@
 		<h3 class="titbg">主要领域<span> / main areas</span></h3>
 		<div v-for="(menu, index) in menus" :key="index" class="caseItem clear">
 			<img :src="require('../' + menu.src)" />
-			<h2>
+			<h2 >
 				{{ menu.title }}
 			</h2>
 			<p>{{ menu.text }}</p>
