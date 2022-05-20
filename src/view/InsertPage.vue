@@ -278,8 +278,8 @@
 		methods: {
 			initThree() {
 				let $insertBox = document.getElementById("insertBox");
-				let width = $insertBox.clientWidth //窗口宽
-				let height = $insertBox.clientHeight
+				let width = window.innerWidth //窗口宽
+				let height =window.innerHeight
 				this.renderer = new THREE.WebGL1Renderer({
 					antialias: true
 				})
@@ -333,6 +333,7 @@
 				orbitControls.maxPolarAngle = Math.PI * 0.48;
 				orbitControls.update();
 				css3DObject.visible = true;
+				window.addEventListener( 'resize', this.onWindowResize, false );
 			},
 			setEnvMap(hdr) {
 				new RGBELoader().setPath("/static/gltf/").load(hdr + ".hdr", (texture) => {
@@ -381,7 +382,12 @@
 				labelRenderer.render(scene, this.camera);
 				this.renderer.render(scene, this.camera)
 			},
-
+			onWindowResize(){
+				this.camera.aspect = window.innerWidth / window.innerHeight;
+				this.camera.updateProjectionMatrix();
+				this.renderer.setSize( window.innerWidth, window.innerHeight );
+				labelRenderer.setSize( window.innerWidth, window.innerHeight );
+			},
 			echartsConfig(options) {
 				options.color = ['#e7717b', '#80FFA5'];
 				options.series[0].lineStyle = {
