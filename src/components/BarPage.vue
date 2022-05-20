@@ -43,26 +43,26 @@
 					let newLegend = legend.map(item => item.name);
 					options.legend = {
 						x: 'right',
-						y: '-5px',
+						y: '0',
 						textStyle: {
 							color: '#d5f2fa',
-							fontSize:10
+							fontSize:8
 
 						},
 						icon: 'rect',
-						padding: [30, 5, 0, 0],
+						itemWidth:4,
+						itemHeight:4,
 						data: newLegend
 					}
 				}
 				if (titleText) {
 					let title = {
 						text: titleText,
-						left:'center',
-						padding: [10, 0, 20, 10],
+						left:'4%',
 						textStyle: {
 							color: '#ffffff',
 							fontFamily: 'sans-serif',
-							fontSize:14
+							fontSize:8
 						}
 					};
 					options.title = title;

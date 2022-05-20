@@ -42,7 +42,7 @@
 }
 .table-carousel div{
     display:inline-block;
-    font-size:0.7rem;
+    font-size:0.6rem;
     color:white;
     text-align: center;
 }

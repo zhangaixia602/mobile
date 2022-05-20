@@ -29,8 +29,11 @@
 					legend: {
                         bottom: '1%',
                         left: 'center',
+						itemWidth:4,
+						itemHeight:4,
 						textStyle:{
-							color:"white"
+							color:"white",
+							fontSize:8
 						}
                     },
 				};
@@ -38,12 +41,11 @@
 				if (this.titleText) {
 					let title = {
 						text: this.titleText,
-						padding: [10, 0, 20, 10],
-						left:'center',
+						left:'4%',
 						textStyle: {
 							color: '#ffffff',
 							fontFamily: 'sans-serif',
-							fontSize:14
+							fontSize:8
 						}
 					};
 					options.title = title;
@@ -56,12 +58,10 @@
                     type: 'pie',
                     radius: ['20%', '50%'],
 					label: {
-						alignTo: 'edge',
-						formatter: '{b}\n{c}%',
-                        minMargin: 5,
-                        edgeDistance: 10,
-                        lineHeight: 15,
-						color: 'white'
+						position: 'inner',
+						formatter: '{c}%',
+						color: 'white',
+						fontSize:8
                     },
                     data: this.data
                 }];

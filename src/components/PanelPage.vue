@@ -2,7 +2,7 @@
 	<div class='panelPage'>
         <h2 class='titleBg'>{{this.titleText}}</h2>
         <div class='panelBox textCenter'>
-            <div class='panelItem textCenter' v-for="(panel, index) in panels" :key="index">
+            <div class='panelItem' v-for="(panel, index) in panels" :key="index">
                 <i class="icon iconfont" :class="panel.icon"></i>
                 <p>
                     <label>{{panel.label}}</label>
@@ -30,16 +30,18 @@
     height:100%;
 }
 .panelBox{
-    font-size:0.7rem;
+    font-size:0.6rem;
     color:rgb(255, 251, 0);
 }
+.panelItem{
+	text-align: center;
+}
 .panelItem .iconfont{
-    font-size:1.5rem;
+    font-size:1.1rem;
     color:#58fdff;
-    margin-right:0.5rem;
 }
 .panelItem label{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     text-align: center;
     color:white;
 }

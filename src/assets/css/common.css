@@ -116,3 +116,20 @@ p {
     height: 39px;
     line-height: 39px;
 }
+.titleBg{
+	    position: relative;
+	    border-bottom: 1px solid #58fdff;
+	    font-size: 0.7rem;
+	    text-align: center;
+		margin-bottom:0;
+	    color: white;
+	}
+	.titleBg::after{
+	    content: "";
+	    position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    width: 41px;
+	    height: 3px;
+	    background: #58fdff;
+	}

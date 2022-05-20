@@ -134,26 +134,26 @@
 					return {
 						key: "id" + index,
 						name: '2022-4-14',
-						age: 'co7' + parseInt(Math.random() * 2) + '号锅炉水位极高',
+						age: 'co7' +index,
 						remark: '未解决'
 					}
 				}),
 
 				columns: [{
 						title: '报警时间',
-						width: 80,
+						width:60,
 						dataIndex: 'name',
 						key: 'name'
 					},
 					{
 						title: '变量',
-						width: 100,
+						width:40,
 						dataIndex: 'age',
 						key: 'age'
 					},
 					{
 						title: '报警描述',
-						width: 80,
+						width:50,
 						dataIndex: 'remark',
 						key: 'remark'
 					}
@@ -197,7 +197,7 @@
 					}
 				],
 				vehicle: {
-					title: "单台设备开机率",
+					title: "开机率",
 					xAxis: [],
 					legend: [{
 						name: "冰水机",
@@ -377,29 +377,6 @@
 				// 默认不显示
 				css3DObject.visible = false;
 			},
-			// onMouseClick(event) {
-			//         console.log("===");
-			//         const mousePoint = new THREE.Vector2();
-			//         mousePoint.x = (event.clientX / window.innerWidth) * 2 - 1;
-			//         mousePoint.y = -(event.clientY / window.innerHeight) * 2 + 1;
-			//         const rayCaster = new THREE.Raycaster();
-			//         rayCaster.setFromCamera(mousePoint, this.camera);
-			//         let intersects = rayCaster.intersectObjects(scene.children, true);
-			//         console.log(intersects);
-			//         if (intersects.length > 0) {
-			//             css3DObject.visible = true;
-			//             css3DObject.position.x = intersects[0].object.position.x - 50 + 18;
-			//             css3DObject.position.y = intersects[0].object.position.y + 50 + 38;
-			//             css3DObject.position.z = intersects[0].object.position.z;
-
-
-			//            this.modifyDocument("lableTitleWarning", "red", "报警信息: 温度过高");
-			//            this. modifyDocument("lableTitleTemperature", "red", "温度: 120℃");
-			//         } else {
-			//             // css3DObject.visible = false;
-			//         }
-			//     },
-
 			animate() {
 				requestAnimationFrame(this.animate)
 				orbitControls.update();
@@ -447,28 +424,28 @@
 		background-size: cover;
 		text-align: center;
 		color: white;
-		font-size: 2rem;
-		line-height: 3.5rem;
+		font-size: 0.8rem;
+		line-height: 1.5rem;
 	}
 
 	.left,
 	.right {
-		width: 14rem;
-		height: calc(100% - 4rem);
+		width:8.5rem;
+		height: calc(100% - 1.5rem);
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		position: absolute !important;
-		top: 4rem;
+		top:1.5rem;
 	}
 
 	.left {
-		margin-left: 1rem;
+		margin-left:0.2rem;
 		left: 0;
 	}
 
 	.right {
-		margin-right: 1rem;
+		margin-right:0.2rem;
 		right: 0;
 	}
 
@@ -480,38 +457,38 @@
 	}
 
 	.borderBg {
-		width: 14rem;
-		height: 10rem;
-		/* background:url(../assets/border.png) no-repeat center center;  */
+		width:8.5rem;
+		height: 5rem;
+		background:url(../assets/border.png) no-repeat center center; 
 		overflow: hidden;
+		background-size: 8.5rem 5rem;
 	}
 
 	.bottomborderBg {
-		width: 14rem;
-		height: 9rem;
-		margin-top: 10px;
+		width:8.5rem;
+		height: 5rem;
+		margin-top: 0.5rem;
 		background: url(../assets/border.png) no-repeat center center;
-		background-size: 14rem 10rem;
+		background-size:8.5rem 5rem;
 		overflow: hidden;
 	}
 
 	.bottom .borderBg {
-		width: 17rem;
-		height: 12rem;
-		background-size: 17rem 12rem;
+		width:14rem;
+		height: 6rem;
+		background-size: 14rem 6rem;
 	}
 
 	.jkbox {
 		display: flex;
-		justify-content: space-between;
+		justify-content:center;
 
 	}
 
 	.imgbox {
-		width: 14rem;
-		height: 9rem;
+		width: 7rem;
+		height: 4rem;
 		background: url(../assets/jk.png) no-repeat center center;
-		/* background-size: 300px 300px; */
 		overflow: hidden;
 
 	}
@@ -520,29 +497,28 @@
 	.r-gifbox {
 		display: flex;
 		flex-direction: column;
-		height: 10rem;
+		height: 5rem;
+		padding:0.5rem;
 	}
 
 	.r-gifbox img {
 		background-size: 300px 300px;
 		overflow: hidden;
-		width: 7rem;
-		height: 4rem;
-		margin-top: 0.5rem;
+		width: 4rem;
+		height: 3rem;
 	}
-
-	.alarmborder .borderBg {
+	/* .alarmborder .borderBg {
 		width: 15rem;
 		height: 5rem;
 		background-size: 15rem 5rem;
-	}
+	} */
 
 	#category,
 	#temDity,
 	#pie1,
 	#vehicle,
 	#dayStatis {
-		width: 14rem;
-		height: 10rem;
+		width:8.5rem;
+		height:5rem;
 	}
 </style>
