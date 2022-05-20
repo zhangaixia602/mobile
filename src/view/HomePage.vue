@@ -1,7 +1,8 @@
 <template>
 	<HeaderPage />
-	<MiddlePage/>
+	<MiddlePage />
 	<CasePage />
+	<AboutUs />
 	<PartnersPage />
 	<FooterPage />
 </template>
@@ -11,16 +12,17 @@
 	import FooterPage from '@/components/FooterPage';
 	import PartnersPage from '@/components/PartnersPage';
 	import CasePage from '@/components/CasePage';
-    
+	import AboutUs from '@/components/AboutUs'
 	export default {
 		name: 'HomePage',
 		components: {
-    HeaderPage,
-	MiddlePage,
-    FooterPage,
-    PartnersPage,
-    CasePage,
-    MiddlePage
-}
+			HeaderPage,
+			MiddlePage,
+			FooterPage,
+			PartnersPage,
+			CasePage,
+			MiddlePage,
+			AboutUs
+		}
 	}
 </script>
