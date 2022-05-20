@@ -1,74 +1,74 @@
 <template>
-	<header>智慧工厂</header>
-	<section class='left'>
-		<div class='category borderBg'>
-			<PiePage :options="{
-        domSelector: 'pie1',
-        title:this.categoryTitle,
-        data:this.categoryData
-      }" />
-		</div>
-		<div class='bottomborderBg'>
-			<BarPage :options="{
-        domSelector: 'vehicle',
-        viewData: this.vehicle,
-        smooth:true,
-        data:this.vehicleData,
-
-      }" />
-		</div>
-		<div class='bottomborderBg'>
-			<BarPage :options="{
-        domSelector: 'dayStatis',
-        viewData: this.dayStatis,
-        smooth:true,
-        data:this.dayStatisData
-      }" />
-		</div>
-	</section>
-	<section class='bottom'>
-		<div class="borderBg">
-			<h2 class='titleBg'>视频监控</h2>
-			<div class="jkbox">
-				<div class="imgbox"></div>
-				<div class="r-gifbox">
-					<img :src="require('../assets/gc.gif')" />
-					<img :src="require('../assets/jq.gif')" />
+	<div id='insertBox'>
+		<header>智慧工厂</header>
+		<section class='left'>
+			<div class='category borderBg'>
+				<PiePage :options="{
+		    domSelector: 'pie1',
+		    title:this.categoryTitle,
+		    data:this.categoryData
+		  }" />
+			</div>
+			<div class='bottomborderBg'>
+				<BarPage :options="{
+		    domSelector: 'vehicle',
+		    viewData: this.vehicle,
+		    smooth:true,
+		    data:this.vehicleData,
+		
+		  }" />
+			</div>
+			<div class='bottomborderBg'>
+				<BarPage :options="{
+		    domSelector: 'dayStatis',
+		    viewData: this.dayStatis,
+		    smooth:true,
+		    data:this.dayStatisData
+		  }" />
+			</div>
+		</section>
+		<section class='bottom'>
+			<div class="borderBg">
+				<h2 class='titleBg'>视频监控</h2>
+				<div class="jkbox">
+					<div class="imgbox"></div>
+					<div class="r-gifbox">
+						<img :src="require('../assets/gc.gif')" />
+						<img :src="require('../assets/jq.gif')" />
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class='right'>
-		<div class='alarmborder'>
-			<div class='borderBg'>
-				<PanelPage :options="{
-        title:this.panelTitle,
-        data:this.panelData
-      }" />
+		</section>
+		<section class='right'>
+			<div class='alarmborder'>
+				<div class='borderBg'>
+					<PanelPage :options="{
+		    title:this.panelTitle,
+		    data:this.panelData
+		  }" />
+				</div>
 			</div>
-		</div>
-		<div class='borderBg'>
-			<CarouselTable :options="{
-          title:this.carouselTitle,
-          viewData: this.columns,
-          data:this.dataSource,
-      }" />
+			<div class='borderBg'>
+				<CarouselTable :options="{
+		      title:this.carouselTitle,
+		      viewData: this.columns,
+		      data:this.dataSource,
+		  }" />
 
+			</div>
+			<div class='borderBg'>
+				<BarPage :options="{
+		    domSelector: 'temDity',
+		    viewData: this.temDity,
+		    smooth:true,
+		    data:this.temDityData,
+		    config:this.echartsConfig
+		  }" />
+			</div>
+		</section>
+		<div id="WebGL-output">
 		</div>
-		<div class='borderBg'>
-			<BarPage :options="{
-        domSelector: 'temDity',
-        viewData: this.temDity,
-        smooth:true,
-        data:this.temDityData,
-        config:this.echartsConfig
-      }" />
-		</div>
-	</section>
-	<div id="WebGL-output">
 	</div>
-
-
 </template>
 
 <script>
@@ -134,26 +134,26 @@
 					return {
 						key: "id" + index,
 						name: '2022-4-14',
-						age: 'co7' +index,
+						age: 'co7' + index,
 						remark: '未解决'
 					}
 				}),
 
 				columns: [{
 						title: '报警时间',
-						width:60,
+						width: 60,
 						dataIndex: 'name',
 						key: 'name'
 					},
 					{
 						title: '变量',
-						width:40,
+						width: 40,
 						dataIndex: 'age',
 						key: 'age'
 					},
 					{
 						title: '报警描述',
-						width:50,
+						width: 50,
 						dataIndex: 'remark',
 						key: 'remark'
 					}
@@ -277,13 +277,14 @@
 
 		methods: {
 			initThree() {
-				let width = window.innerWidth //窗口宽
-				let height = window.innerHeight
+				let $insertBox = document.getElementById("insertBox");
+				let width = $insertBox.clientWidth //窗口宽
+				let height = $insertBox.clientHeight
 				this.renderer = new THREE.WebGL1Renderer({
 					antialias: true
 				})
 				this.renderer.setSize(width, height)
-
+				$insertBox.appendChild(this.renderer.domElement)
 
 				scene = new THREE.Scene()
 				let cubeTextureLoader = new THREE.CubeTextureLoader();
@@ -305,12 +306,11 @@
 				this.controls = new OrbitControls(this.camera, this.renderer.domElement);
 				this.controls.maxDistance = 1700;
 				this.controls.maxPolarAngle = Math.PI * 0.48;
-				document.body.appendChild(this.renderer.domElement);
 				labelRenderer = new CSS3DRenderer();
-				labelRenderer.setSize(window.innerWidth, window.innerHeight);
+				labelRenderer.setSize(width, height);
 				labelRenderer.domElement.style.position = 'absolute';
 				labelRenderer.domElement.style.top = '0px';
-				document.body.appendChild(labelRenderer.domElement);
+				$insertBox.appendChild(labelRenderer.domElement);
 				this.addCSS3DLabelToScene();
 				let objLoader = new GLTFLoader();
 				let dracoLoader = new DRACOLoader();
@@ -333,8 +333,6 @@
 				orbitControls.maxPolarAngle = Math.PI * 0.48;
 				orbitControls.update();
 				css3DObject.visible = true;
-				document.body.appendChild(this.renderer.domElement)
-
 			},
 			setEnvMap(hdr) {
 				new RGBELoader().setPath("/static/gltf/").load(hdr + ".hdr", (texture) => {
@@ -415,11 +413,17 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-	body {
-		overflow: hidden;
+	#insertBox {
+		width: 100%;
+		height: 100vh;
+		position: relative;
 	}
 
 	header {
+		position: absolute;
+		top:0;
+		left:0;
+		width:100%;
 		background: url(../assets/tb1.png) no-repeat center center;
 		background-size: cover;
 		text-align: center;
@@ -430,22 +434,22 @@
 
 	.left,
 	.right {
-		width:8.5rem;
+		width: 8.5rem;
 		height: calc(100% - 1.5rem);
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		position: absolute !important;
-		top:1.5rem;
+		top: 1.5rem;
 	}
 
 	.left {
-		margin-left:0.2rem;
+		margin-left: 0.2rem;
 		left: 0;
 	}
 
 	.right {
-		margin-right:0.2rem;
+		margin-right: 0.2rem;
 		right: 0;
 	}
 
@@ -457,31 +461,31 @@
 	}
 
 	.borderBg {
-		width:8.5rem;
+		width: 8.5rem;
 		height: 5rem;
-		background:url(../assets/border.png) no-repeat center center; 
+		background: url(../assets/border.png) no-repeat center center;
 		overflow: hidden;
 		background-size: 8.5rem 5rem;
 	}
 
 	.bottomborderBg {
-		width:8.5rem;
+		width: 8.5rem;
 		height: 5rem;
 		margin-top: 0.5rem;
 		background: url(../assets/border.png) no-repeat center center;
-		background-size:8.5rem 5rem;
+		background-size: 8.5rem 5rem;
 		overflow: hidden;
 	}
 
 	.bottom .borderBg {
-		width:14rem;
+		width: 14rem;
 		height: 6rem;
 		background-size: 14rem 6rem;
 	}
 
 	.jkbox {
 		display: flex;
-		justify-content:center;
+		justify-content: center;
 
 	}
 
@@ -498,7 +502,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 5rem;
-		padding:0.5rem;
+		padding: 0.5rem;
 	}
 
 	.r-gifbox img {
@@ -507,6 +511,7 @@
 		width: 4rem;
 		height: 3rem;
 	}
+
 	/* .alarmborder .borderBg {
 		width: 15rem;
 		height: 5rem;
@@ -518,7 +523,7 @@
 	#pie1,
 	#vehicle,
 	#dayStatis {
-		width:8.5rem;
-		height:5rem;
+		width: 8.5rem;
+		height: 5rem;
 	}
 </style>

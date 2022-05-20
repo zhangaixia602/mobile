@@ -41,7 +41,7 @@
     color:#58fdff;
 }
 .panelItem label{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-align: center;
     color:white;
 }
