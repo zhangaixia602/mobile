@@ -95,7 +95,8 @@
 				this.currentIndex = index
 			},
 			showPage(product){
-				console.log(product)
+				console.log(product.path);
+				this.$router.push(product.path)
 			}
 		}
 	})
