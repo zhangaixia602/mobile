@@ -105,6 +105,7 @@
 	}
 	.cultureItem h3{
 		color: #f4a940;
-		font-size: 0.9rem;
+		font-weight: bold;
+        font-size: 0.8rem;
 	}
 </style>
