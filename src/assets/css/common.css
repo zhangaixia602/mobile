@@ -149,9 +149,9 @@ p {
 	display: inline-block;
 	width: 2rem;
 	height: 0.1rem;
-	background: #006ebf;
+	background: #3d92b2;
 	position: absolute;
-	left: 7%;
+	left: 29%;
 	bottom: 0;
 	transform: translateX(-50%);
 }
