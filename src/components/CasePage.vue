@@ -159,7 +159,7 @@
 	}
 
 	.productItem {
-		width: 5rem;
+		width: 48%;
 		display: none;
 		border: 1px solid #edf1f7;
 		box-shadow: 0 0.2rem 0.3rem 0 #edf1f7;
@@ -174,7 +174,7 @@
 
 	.productItem img {
 		width: 100%;
-		height: 4rem;
+		height: 8rem;
 		filter: blur(0);
 	}
 
