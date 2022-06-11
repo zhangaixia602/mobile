@@ -28,9 +28,9 @@
 <script>	
 	import {
 		defineComponent
-	} from "vue";
+	} from "vue";  
 	export default defineComponent({
-		name: 'CasePage',
+		name: 'CaseIPage',       
 		data() {
 			return {				
 				currentIndex: 0,
@@ -157,13 +157,14 @@
 
 	.product .wrapper {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
+		flex-direction: column;
+        align-items: center;
+        justify-content: center;
 		cursor: pointer;
 	}
 
 	.productItem {
-		width: 48%;
+		width: 16rem;
 		display: none;
 		border: 1px solid #edf1f7;
 		box-shadow: 0 0.2rem 0.3rem 0 #edf1f7;
@@ -178,7 +179,7 @@
 
 	.productItem img {
 		width: 100%;
-		height: 8rem;
+		height: 10rem;
 		filter: blur(0);
 	}
 
