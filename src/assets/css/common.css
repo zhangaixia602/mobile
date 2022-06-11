@@ -144,7 +144,7 @@ p {
 	position: relative;
 }
 
-.ztbg::after {
+/* .ztbg::after {
 	content: "";
 	display: inline-block;
 	width: 2rem;
@@ -154,4 +154,4 @@ p {
 	left: 29%;
 	bottom: 0;
 	transform: translateX(-50%);
-}
+} */

@@ -19,19 +19,20 @@
 		</div>
 	</section>
 	<a-modal wrapClassName='propup' :footer="null" v-model:visible="visible" title="视频展示" @ok="handleOk">
-		<video autoplay="true" loop>
-			<source :src="require('../assets/'+videoSrc)" type="video/mp4" />
+		<video id="video" muted autoplay="true" preload loop webkit-playsinline="true" controls x5-video-player-type="h5" playsinline="true" x-webkit-airplay="true" >
+			<source :src="require('../assets/'+videoSrc)" type="video/mp4" />当前浏览器不能支持视频播放，请采用chrome或IE9以上浏览器
 		</video>
 	</a-modal>
 </template>
-<script>
+
+<script>	
 	import {
 		defineComponent
 	} from "vue";
 	export default defineComponent({
 		name: 'CasePage',
 		data() {
-			return {
+			return {				
 				currentIndex: 0,
 				currentgroup: '',
 				videoSrc:'',
@@ -60,23 +61,23 @@
 				products: [{
 						group: 'park',
 						title: '智慧工厂',
-						src: 'assets/yq.png',
+						src: 'assets/yq2.png',
 						id: '01',
-						video: 'water.mp4'
+						video: 'minwater.mp4'
 					},
 					{
 						group: 'energy',
 						title: '智慧能源',
 						src: 'assets/ny.png',
 						id: '02',
-						video: 'water.mp4'
+						video: 'minwater.mp4'
 					},
 					{
 						group: 'park',
 						title: '智慧粮仓',
 						src: 'assets/lc.png',
 						id: '03',
-						video: 'water.mp4'
+						video: 'minwater.mp4'
 					},
 					{
 						group: 'draulic',
@@ -90,13 +91,13 @@
 						title: '智慧厂区',
 						src: 'assets/cyq.png',
 						id: '05',
-						video: 'water.mp4'
+						video: 'minwater.mp4'
 					}
 
 				]
 			}
-		},
-		methods: {
+		},		
+		methods: {			
 			handleOk(){
 				this.visible=false;
 			},
@@ -105,6 +106,7 @@
 				this.currentIndex = index
 			},
 			showPage(product) {
+				 
 				if(product.path){
 					this.$router.push(product.path)
 				}
@@ -112,7 +114,9 @@
 					this.videoSrc=product.video;
 					this.visible=true;
 				}
-			}
+				
+			},	
+			
 		}
 	})
 </script>

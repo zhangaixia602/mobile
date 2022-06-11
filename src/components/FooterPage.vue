@@ -11,8 +11,10 @@
 			</p>
 			<p class="textCenter">
 				<i class="icon iconfont icon-dizhi"></i>
-				<span>深圳市龙华新区清祥路1号宝能科技园7栋A座11楼</span>
+				<span>深圳市龙华区龙华街道壹成环智中心2座13层B08、B09单位</span>
 			</p>
+			<router-link  to="/case" target="_blank" >			
+		  </router-link>
 		</section>
 		<section class="copyRight">
 			<p>Copyright ©2019深圳市达英和自动化工程有限公司.版权所有</p>

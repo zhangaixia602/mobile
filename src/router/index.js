@@ -11,6 +11,11 @@ export default createRouter({
 			component: () => import('@/view/HomePage')
 		},
 		{
+			path: '/case',
+			name: '案例演示',
+			component: () => import('@/components/CaseIPage')
+		  },
+		{
 			path: '/model/:id',
 			name: '示例',
 			component: () => import('@/view/ModelPage')

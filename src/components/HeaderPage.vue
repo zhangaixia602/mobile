@@ -9,12 +9,14 @@
 	</a-carousel>
 	<div class="wrapper">
 		<h3 class="titbg">主要领域<span> / main areas</span></h3>
+		<div class="main-content">
 		<div v-for="(menu, index) in menus" :key="index" class="caseItem clear">
 			<img :src="require('../' + menu.src)" />
 			<h2 >
 				{{ menu.title }}
 			</h2>
 			<p>{{ menu.text }}</p>
+		</div>
 		</div>
 	</div>
 </template>
@@ -24,9 +26,9 @@
 		data() {
 			return {
 				banners: [
-					"assets/banner1.png",
-					"assets/banner2.png",
-					"assets/banner3.png",
+					"assets/banner01.jpg",
+					"assets/banner02.jpg",
+					"assets/banner03.jpg",
 				],
 				menus: [{
 						src: "assets/zhny.png",
@@ -76,9 +78,9 @@
 	}
 
 	.caseItem {
-		width: 9.5rem;
+		width: 8.5rem;
         height: 7rem;
-        margin: 0px 2px 1px 2px;
+        margin: 0px 4px 8px 4px;
 		box-shadow: 0px 0px 10px #f0f0f0;
 		display: inline-block;
 		overflow: hidden;
@@ -93,15 +95,20 @@
 
 	.caseItem h2 {
 		font-size: 18px;
-		margin: -45px 0px 16px 100px;
+		margin: -60px 0 16px 80px;
 		color: #000000;
 
 	}
 
 	.caseItem p {
-		margin: 0 0 0 5px;
+		margin: 30px 0 0 5px;
 		font-size: 12px;
 		color: #afabab;
 		text-overflow: ellipsis;
+	}
+	.main-content{
+	display: flex;
+    flex-wrap: wrap;   
+    justify-content: center;
 	}
 </style>
